@@ -1,9 +1,9 @@
 const { Sequelize } = require('sequelize');
 
-// Koneksi ke H2 Database
-const sequelize = new Sequelize('jdbc:h2:mem:testdb', 'sa', '', {
-    dialect: 'sqlite',
-    dialectModule: require('sqlite3'),
+// Membuat koneksi ke SQLite
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: './database.sqlite', // Path ke file SQLite (misalnya: database.sqlite)
 });
 
 module.exports = sequelize;
